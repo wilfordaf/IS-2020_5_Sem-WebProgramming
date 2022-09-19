@@ -79,7 +79,7 @@
                 film_data = film_table.FilmTable('film_database.db')
                 film_data.add_film(config.INPUT_NAME, message.video.file_id)
                 film_data.close()
-                bot.send_message(message.chat.id, text="Фильм <{0}> успешно добавлен".format(config.INPUT_NAME))
+                bot.send_message(message.chat.id, text="Фильм &lt;{0}&gt; успешно добавлен".format(config.INPUT_NAME))
                 config.INPUT_FLAG = False
                 config.INPUT_NAME = ""
             else:
@@ -93,12 +93,12 @@
         </article>
     </main>
     <footer>
-        <nav align="center">
+        <div align="center" id="links">
             <a href="index.html">ENG</a> /
             <a href="introductionRu.html">RU</a> |
-            <a href="https://www.github.com/wilfordaf">Мой профиль Github</a> |
+            <a href="https://www.github.com/wilfordaf">My Github Profile</a> |
             <a href="easternEggRu.html">?</a>
-        </nav>
+        </div>
     </footer>
 </body>
 </html>
