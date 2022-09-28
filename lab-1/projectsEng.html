@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="cv, developer, python">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="outline.css"
+</head>
+<body>
+    <header>
+        <font size="+3">
+            <nav align="center">
+                <a href="index.html">Introduction</a> |
+                <a href="projectsEng.html">Projects</a> |
+                <a href="CVEng.html">CV</a> |
+                <a href="contactsEng.html">Contact me</a>
+            </nav>
+        <h1 align="center">Projects</h1>
+        </font>
+    </header>
+    <main>
+        <article>
+            <a href="https://github.com/Mihinator3000/Group-Projects/tree/main/LOOT.FARM%20Parcer"><img src="resourses/lootfarm.png" width="550" height="550" alt="lootfarm" align="right"/></a>   
+            <font size="+3">
+                <dl>
+                    <dt><em>1) — "LootFarm Parcer" —</em></dt>
+                    <dd>Description: allows the user to receive notifications in telegram about the goods on sale and sold of a certain category.</dd>
+                    <dd>Usage: download release, install all required libs. Then run main("*desired item type*")</dd>
+                    <dd>Tools used: telebot + telegramAPI, requests + fake useragent, pickle serialization</dd>
+                    <dd>Algorithm complexity: O(n<sup>4</sup>), where n = item count.</dd>
+                    <dd>Code snippet: </dd>
+                </dl>
+            </font>
+            <font size="+1">
+<pre>
+    <code>
+        # Parcing LootFarm responce...
+        for item in result:
+        skin = re.findall(r'"' + weapon + '.*?"', item)[0]
+        quality = re.findall(r'FN|MW|FT|WW|BS', item)[0] if "|" in skin else "Vanilla"
+        float_data = re.findall(r'"f":.*?,', item)
+        float_values = []
+        for data in float_data:
+            float_value = data[4:-1].replace("\"", "")
+            match len(float_value):
+                case 1:
+                    float_value = float(float_value)
+                case _:
+                    float_value = float(float_value.split(":")[0]) / 10 ** 5
+
+            float_values.append(float_value)     
+    </code>
+</pre>
+            </font>
+        </article>
+        <hr>
+        <article>
+            <a href="https://github.com/Mihinator3000/Group-Projects/tree/main/DeadInside">
+                <img src="resourses/deadinside.jpg" width="550" height="550" alt="bot" align="right"/></a>   
+            <font size="+3">
+                <dl>
+                    <dt><em>2) — "Cinema Telegram Bot" —</em></dt>
+                    <dd>Description: allows the user to find a movie from the database in a convenient interface, 
+                        watch it in the telegram interface or download it.</dd>
+                    <dd>Usage: follow the UI instructions (you have to be a follower of our partners channel) </dd>
+                    <dd>Tools used: aiogram + telegramAPI, postgreSQL</dd>
+                    <dd>Code snippet: </dd>
+                </dl>
+            </font>
+            <font size="+1">
+<pre>
+<code>
+    # My eyes...
+    @bot.message_handler(content_types=["video"])
+    def add_video(message):
+        if config.INPUT_FLAG:
+            user_data = user_table.UserTable('database.db')
+            if user_data.get_admin(message.from_user.id):
+                film_data = film_table.FilmTable('film_database.db')
+                film_data.add_film(config.INPUT_NAME, message.video.file_id)
+                film_data.close()
+                bot.send_message(message.chat.id, text="Фильм &lt;{0}&gt; успешно добавлен".format(config.INPUT_NAME))
+                config.INPUT_FLAG = False
+                config.INPUT_NAME = ""
+            else:
+                bot.send_message(message.chat.id, text="У вас не прав на добавление материалов в данного бота.")
+            user_data.close()
+        else:
+            bot.send_message(message.chat.id, text="Неверный формат запроса")
+</code>
+</pre>
+            </font>
+        </article>
+    </main>
+    <footer>
+        <div align="center" id="links">
+            <a href="index.html">ENG</a> /
+            <a href="introductionRu.html">RU</a> |
+            <a href="https://www.github.com/wilfordaf">My Github Profile</a> |
+            <a href="easternEggRu.html">?</a>
+        </div>
+    </footer>
+</body>
+</html>
