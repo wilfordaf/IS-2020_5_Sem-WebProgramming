@@ -83,14 +83,16 @@
 
 .item {
     min-width: 250px;
+    max-width: 1000px;
     margin: 10px 10px;
 }
 
 .item__body {
-    padding: 10px 16px;
+    padding: 6px 16px;
     background-color: rgb(237, 237, 237);
     border: solid 0.15em;
     border-radius: 30px;
+    line-height: 24px;
 }
 
 .item__name {

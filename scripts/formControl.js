@@ -18,7 +18,23 @@ document.querySelector(".form").addEventListener("submit", (e) => {
 });
 
 function getQuestionsList() {
-    return JSON.parse(localStorage.getItem("questionList")) || []
+    const testQuestions = [
+        {
+            Name: "Lorem",
+            Contact: "Lorem@ipsum.sit",
+            Message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac facilisis nibh, et convallis nibh. Praesent ut augue id magna sollicitudin posuere."
+        },
+        {
+            Name: "Suspendisse",
+            Contact: "Suspendisse@potenti.nec",
+            Message: "Suspendisse potenti. Nunc semper, enim nec euismod mollis, quam elit semper turpis, at accumsan dolor ligula ac ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+        }
+    ]
+
+    const questionList = JSON.parse(localStorage.getItem("questionList"))
+    return questionList ? questionList : testQuestions
+
+    
 };
 
 function addQuestion(item) {
