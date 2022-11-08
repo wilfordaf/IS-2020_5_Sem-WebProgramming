@@ -18,4 +18,4 @@
 
         i.classList.remove("active")
     })
-})()
+})();

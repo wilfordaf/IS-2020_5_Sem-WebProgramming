@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
     updateUI()
-})
+});
 
 document.querySelector(".form").addEventListener("submit", (e) => {
     e.preventDefault()
@@ -19,24 +19,24 @@ document.querySelector(".form").addEventListener("submit", (e) => {
 
 function getQuestionsList() {
     return JSON.parse(localStorage.getItem("questionList")) || []
-}
+};
 
 function addQuestion(item) {
     const questions = getQuestionsList()
     questions.unshift(item)
     updateStorage(questions)
     updateUI()
-}
+};
 
 function removeQuestion(item) {
     let questions = getQuestionsList()
     questions = questions.filter(q => JSON.stringify(q) !== JSON.stringify(item))
     updateStorage(questions)
-}
+};
 
 function updateStorage(questions) {
     localStorage.setItem("questionList", JSON.stringify(questions))
-}
+};
 
 function updateUI() {
     const questions = getQuestionsList()
@@ -56,7 +56,7 @@ function updateUI() {
             updateUI()
         })
     })
-}
+};
 
 function createQuestion(name, contact, message) {
     return {
@@ -64,7 +64,7 @@ function createQuestion(name, contact, message) {
         Contact: contact,
         Message: message
     }
-}
+};
 
 function createQuestionDOM(name, contact, message) {
     return `
@@ -76,11 +76,11 @@ function createQuestionDOM(name, contact, message) {
                 <div class="item__text">Message: ${message}</div>
             </div>
         </div>`
-}
+};
 
 function createQuestionTemplate(stringContent) {
     let template = document.createElement('template');
     stringContent = stringContent.trim();
     template.innerHTML = stringContent
     return template.content.firstChild;
-}
+};
