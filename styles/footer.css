@@ -32,10 +32,14 @@
 
 .footer-block__link a{
     color: black;
+    text-decoration: underline 0.1em rgb(237, 237, 237);
+    text-underline-offset: 0.22em;
+    transition: text-decoration-color ease 0.3s;
 }
 
 .footer-block__link a:hover{
-    text-decoration: underline;
+    text-decoration-color: black;
+    transition: text-decoration-color ease 0.3s;
 }
 
 @media screen and (max-width: 600px) {

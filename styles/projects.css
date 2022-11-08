@@ -1,20 +1,61 @@
-.project-columns {
+.project {
     flex: 1 1 auto;
     margin: 80px auto 30px auto;
 }
 
-.project-columns__body {
+.project__body {
     max-width: 1600px;
     margin: 0px 20px;
 }
 
-.project-columns__row {
+.project__filter-bar {
+    margin: 10px 0px 30px;
+}
+
+.filter-bar__text {
+    font-size: 18px;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    margin: 0px 15px 0px 0px;
+}
+
+.filter-bar__body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-bar__options {
+    list-style-type: none;
+}
+
+.filter-bar__options li{
+    display: inline-block;
+    margin: 5px 5px;
+    border: 1px solid;
+    border-style: hidden;
+}
+
+.filter-bar__button {
+    font-size: 17px;
+    padding: 8px 8px;
+    background-color: rgb(237, 237, 237);
+    border-radius: 20px;
+}
+
+.button-active {
+    color: white;
+    background-color: black;
+}
+
+.project__row {
     display: flex;
     margin: 0px -10px;
     flex-wrap: wrap;
 }
 
-.project-columns__column {
+.project__column {
     flex: 0 1 33.333%;
     margin: 0 0 50px 0;
     padding: 0px 10px;
@@ -48,7 +89,7 @@
     margin: 0 0 10px 0;
 }
 
-.item__tools-used li{
+.item__tools-used li {
     font-size: 14px;
     font-weight: 555;
     display: inline-block;
@@ -60,9 +101,29 @@
     border-radius: 20px;
 }
 
-.item__tools-used li:nth-child(n+4){
-    /* TODO: toggle (+n) -> names & vice versa with js*/
+.item__tools-used li:nth-child(n + 4) {
     display: none;
+}
+
+.item__expand-button {
+    font-size: 14px;
+    font-weight: 555;
+    border-radius: 20px;
+    padding: 5px 5px;
+    margin: 5px auto;
+    background-color: rgb(237, 237, 237);
+    transition: ease 0.3s;
+}
+
+.item__expand-button:hover {
+    color: darkgreen;
+    background-color: rgba(0, 255, 0, 0.15);
+    transition: ease 0.3s;
+}
+
+.item__expand-button:active {
+    background-color: rgba(0, 255, 0, 0.5);
+    transition: ease 0.3s;
 }
 
 .item__text {
@@ -72,7 +133,7 @@
 }
 
 @media screen and (max-width: 1100px) {
-    .project-columns__column {
+    .project__column {
         flex: 0 1 50%;
     }
 
@@ -83,7 +144,15 @@
 }
 
 @media screen and (max-width: 600px) {
-    .project-columns__column {
+    .filter-bar__body {
+        flex-direction: column;
+    }
+
+    .filter-bar__text {
+        margin: 0px 15px 15px 0px;
+    }
+
+    .project__column {
         flex: 0 1 100%;
     }
 
