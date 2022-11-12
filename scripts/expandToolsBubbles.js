@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
         const size = l.querySelectorAll("li").length - 3
         const button = l.getElementsByClassName("item__expand-button")[0]
         button.innerText = `+${size}`
-        if (size <= "0") {
+        if (size <= 0) {
             button.style.display = "none";
         }
 
