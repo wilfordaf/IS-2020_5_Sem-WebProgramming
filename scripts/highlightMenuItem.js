@@ -13,9 +13,6 @@
     menuItems.forEach(i => {
         if (locationNames[pageName] == i.innerText) {
             i.classList.add("active")
-            return
         }
-
-        i.classList.remove("active")
     })
 })();
