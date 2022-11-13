@@ -2,7 +2,8 @@ window.addEventListener("load", () => {
     updateUI()
 });
 
-document.querySelector(".form").addEventListener("submit", (e) => {
+const questionForm = document.querySelector(".form")
+questionForm.addEventListener("submit", (e) => {
     e.preventDefault()
     let input = document.querySelectorAll(".form__input-text")
     const inputData = Object.values(input).map(function (e) {
@@ -15,6 +16,7 @@ document.querySelector(".form").addEventListener("submit", (e) => {
 
     const item = createQuestion(...inputData)
     addQuestion(item)
+    questionForm.reset()
 });
 
 function getQuestionsList() {
@@ -33,8 +35,6 @@ function getQuestionsList() {
 
     const questionList = JSON.parse(localStorage.getItem("questionList"))
     return questionList ? questionList : testQuestions
-
-    
 };
 
 function addQuestion(item) {
@@ -57,8 +57,8 @@ function updateStorage(questions) {
 function updateUI() {
     const questions = getQuestionsList()
     const container = document.querySelector(".content-qna__item-list")
-    container.innerHTML =""
-    
+    container.innerHTML = ""
+
     Array.prototype.forEach.call(questions, q => {
         const questionDOM = createQuestionDOM(q.Name, q.Contact, q.Message)
         const questionNode = createQuestionTemplate(questionDOM)
