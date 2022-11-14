@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="cv, developer, python">
+    <script src="./scripts/getLoadTime.js"></script>
     <title>Portfolio - CV</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/cv.css">
@@ -12,27 +14,30 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/footer.css">
 </head>
+
 <body>
     <div class="wrapper">
         <header class="header">
             <div class="header__body">
+                <div class="header__hidden-left"></div>
                 <nav class="header-navbar">
                     <ul class="header-navbar-menu">
                         <li class="header-navbar-menu__item">
                             <a href="index.html">Introduction</a>
                         </li>
                         <li class="header-navbar-menu__item">
-                            <a class="active" href="cv.html">CV</a>
+                            <a href="cv.html">CV</a>
                         </li>
                         <li class="header-navbar-menu__item">
                             <a href="projects.html">Projects</a>
                         </li>
+                        <li class="header-navbar-menu__item">
+                            <a href="qna.html">Q&A</a>
+                        </li>
                     </ul>
                 </nav>
-                <div class="header-title">
-                    <div class="header-title__text">
-                        <h1>Resume</h1>
-                    </div>
+                <div class="header-loadtime">
+                    <div class="header-loadtime__text">⚠️ Sth went wrong!</div>
                 </div>
             </div>
         </header>
@@ -49,7 +54,7 @@
                 </div>
                 <div class="main__info info">
                     <div class="info__body">
-                        <div class="info__hidden-left">I'm invisible!</div>
+                        <div class="info__hidden-left"></div>
                         <div class="info__content">
                             <div class="info__paragraph paragraph">
                                 <div class="paragraph__body">
@@ -66,7 +71,8 @@
                                 <div class="paragraph__body">
                                     <div class="paragraph__header"><span>Achievements</span></div>
                                     <ul class="paragraph__text">
-                                        <li>290 point on USE (Russian Language + Maths + Computer Science + Personal achievements)</li>
+                                        <li>290 point on USE (Russian Language + Maths + Computer Science + Personal
+                                            achievements)</li>
                                         <li>III-tier diploma Phys-Tech Maths Olympics</li>
                                         <li>4.0 average grade point for 4 semesters</li>
                                     </ul>
@@ -85,7 +91,7 @@
                                         <li>Pycharm</li>
                                     </ul>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                         <img class="info__image" src="assets/cv/mystudy.jpg" alt="It's me!">
                     </div>
@@ -116,4 +122,6 @@
         </footer>
     </div>
 </body>
+<script src="./scripts/highlightMenuItem.js"></script>
+
 </html>
