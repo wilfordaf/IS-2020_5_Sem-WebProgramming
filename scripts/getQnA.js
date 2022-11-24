@@ -10,7 +10,6 @@ window.addEventListener("load", getQnA(CURRENT_PAGE))
 async function getQnA() {
     qnaList.style.display = "none"
     errorBlock.style.display = "none"
-    panel.style.display = "none"
     preloader.style.display = "block"
     
     const questionLink = "https://jsonplaceholder.typicode.com/comments"
@@ -31,7 +30,6 @@ async function getQnA() {
             });
 
             preloader.style.display = "none"
-            panel.style.display = "block"
             qnaList.style.display = "block"
             
         })
@@ -40,7 +38,6 @@ async function getQnA() {
             errorBlock.innerHTML += `⚠️ Something went wrong!<br>"${error.message}"`
             preloader.style.display = "none"
             qnaList.style.display = "none"
-            panel.style.display = "none"
             errorBlock.style.display = "block"
         })
 };
