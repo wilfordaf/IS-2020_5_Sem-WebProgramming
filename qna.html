@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="cv, developer, python">
     <script src="./scripts/getLoadTime.js"></script>
-    <title>Portfolio - Introduction</title>
+    <title>Portfolio - Q&A</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/qna.css">
     <link rel="stylesheet" href="styles/clear.css">
@@ -43,28 +43,49 @@
         </header>
         <main class="content">
             <div class="content__body">
-                <div class="content-ask">
-                    <div class="content-ask__body">
-                        <div class="content-ask__header">Feel free to ask anything that interests you 😊</div>
-                        <form class="content-ask__form form">
-                            <ul class="form__field-list">
-                                <li>
-                                    <input type="text" class="form__input-text" name="Name" placeholder="Name" />
-                                </li>
-                                <li>
-                                    <input type="text" class="form__input-text" name="Contact" placeholder="Contact" />
-                                </li>
-                                <li>
-                                    <input type="text" class="form__input-text" name="Message" placeholder="Message" />
-                                </li>
-                            </ul>
-                            <button class="form__ask-button">Ask</button>
-                        </form>
+                <div class="content__columns">
+                    <div class="content__column">
+                        <div class="content-ask">
+                            <div class="content-ask__body">
+                                <div class="content-ask__header">Feel free to ask anything that interests you 😊</div>
+                                <form class="content-ask__form form">
+                                    <ul class="form__field-list">
+                                        <li>
+                                            <input type="text" class="form__input-text" name="Name"
+                                                placeholder="Name" />
+                                        </li>
+                                        <li>
+                                            <input type="text" class="form__input-text" name="Contact"
+                                                placeholder="Contact" />
+                                        </li>
+                                        <li>
+                                            <input type="text" class="form__input-text" name="Message"
+                                                placeholder="Message" />
+                                        </li>
+                                    </ul>
+                                    <button class="form__ask-button">Ask</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="content-questions">
+                            <div class="content-questions__body">
+                                <div class="content-questions__item-list"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="content-qna">
-                    <div class="content-qna__body">
-                        <div class="content-qna__item-list"></div>
+                    <div class="content__column">
+                        <div class="content-qna">
+                            <div class="content-qna__body">
+                                <div class="content_qna__text">
+                                    Please read this list before asking a question.<br>
+                                    Perhaps you will find the thing that interests you.
+                                </div>
+                                <ul class="content-qna__pagination-panel panel"></ul>
+                                <div class="content-qna__error"></div>
+                                <div class="content-qna__item-list"></div>
+                                <div class="content-qna__preloader"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,5 +116,6 @@
 </body>
 <script src="./scripts/highlightMenuItem.js"></script>
 <script src="./scripts/formControl.js"></script>
+<script src="./scripts/getQnA.js"></script>
 
 </html>
