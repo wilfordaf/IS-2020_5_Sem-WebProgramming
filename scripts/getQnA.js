@@ -12,6 +12,7 @@ async function getQnA() {
     errorBlock.style.display = "none"
     preloader.style.display = "block"
     
+    const SLICE_SIZE = 100
     const questionLink = "https://jsonplaceholder.typicode.com/comments"
     await fetch(questionLink)
         .then((data) => data.json())
@@ -21,8 +22,11 @@ async function getQnA() {
                 throw RangeError("Page number is invalid")
             }
 
-            updatePaginationPanel(Math.ceil(data.length / PAGE_SIZE))
-            const pageContent = data.slice((CURRENT_PAGE - 1) * PAGE_SIZE, CURRENT_PAGE * PAGE_SIZE)
+            const randomSlice = Math.floor(Math.random() * 5 + 1)
+            const dataSliced = data.slice((randomSlice - 1) * SLICE_SIZE, randomSlice * SLICE_SIZE)
+            
+            updatePaginationPanel(Math.ceil(SLICE_SIZE / PAGE_SIZE))
+            const pageContent = dataSliced.slice((CURRENT_PAGE - 1) * PAGE_SIZE, CURRENT_PAGE * PAGE_SIZE)
             pageContent.forEach(element => {
                 const qnaDOM = createQnADOM(element)
                 const qnaTemplate = createHTMLTemplate(qnaDOM)
@@ -31,7 +35,6 @@ async function getQnA() {
 
             preloader.style.display = "none"
             qnaList.style.display = "block"
-            
         })
         .catch((error) => {
             errorBlock.innerHTML = ""
