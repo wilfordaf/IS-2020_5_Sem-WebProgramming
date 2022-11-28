@@ -17,7 +17,7 @@ async function getQnA() {
     await fetch(questionLink)
         .then((data) => data.json())
         .then((data) => {
-            if (!(doesCurrentPageExist(data.length))) {
+            if (!(doesCurrentPageExist(SLICE_SIZE))) {
                 CURRENT_PAGE = 1
                 throw RangeError("Page number is invalid")
             }
