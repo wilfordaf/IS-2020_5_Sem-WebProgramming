@@ -1,6 +1,4 @@
-window.addEventListener("load", () => {
-    updateUI()
-});
+window.addEventListener("load", updateUI());
 
 const questionForm = document.querySelector(".form")
 questionForm.addEventListener("submit", (e) => {
@@ -20,21 +18,8 @@ questionForm.addEventListener("submit", (e) => {
 });
 
 function getQuestionsList() {
-    const testQuestions = [
-        {
-            Name: "Lorem",
-            Contact: "Lorem@ipsum.sit",
-            Message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac facilisis nibh, et convallis nibh. Praesent ut augue id magna sollicitudin posuere."
-        },
-        {
-            Name: "Suspendisse",
-            Contact: "Suspendisse@potenti.nec",
-            Message: "Suspendisse potenti. Nunc semper, enim nec euismod mollis, quam elit semper turpis, at accumsan dolor ligula ac ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-        }
-    ]
-
     const questionList = JSON.parse(localStorage.getItem("questionList"))
-    return questionList ? questionList : testQuestions
+    return questionList ? questionList : []
 };
 
 function addQuestion(item) {
@@ -56,12 +41,12 @@ function updateStorage(questions) {
 
 function updateUI() {
     const questions = getQuestionsList()
-    const container = document.querySelector(".content-qna__item-list")
+    const container = document.querySelector(".content-questions__item-list")
     container.innerHTML = ""
 
     Array.prototype.forEach.call(questions, q => {
         const questionDOM = createQuestionDOM(q.Name, q.Contact, q.Message)
-        const questionNode = createQuestionTemplate(questionDOM)
+        const questionNode = createHTMLTemplate(questionDOM)
         container.appendChild(questionNode)
     });
 
@@ -84,9 +69,9 @@ function createQuestion(name, contact, message) {
 
 function createQuestionDOM(name, contact, message) {
     return `
-        <div class="content-qna__item item">
+        <div class="content-questions__item item">
             <div class="item__body">
-                <button class="item__delete-button">X</button>
+                <button class="item__delete-button">✖</button>
                 <div class="item__name">Name: ${name}</div>
                 <div class="item__contact-info">Contact: ${contact}</div>
                 <div class="item__text">Message: ${message}</div>
@@ -94,7 +79,7 @@ function createQuestionDOM(name, contact, message) {
         </div>`
 };
 
-function createQuestionTemplate(stringContent) {
+function createHTMLTemplate(stringContent) {
     let template = document.createElement('template');
     stringContent = stringContent.trim();
     template.innerHTML = stringContent
