@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="styles/clear.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/swiper.css">
+    <link rel="stylesheet" href="styles/headroom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -54,46 +57,63 @@
                 </div>
                 <div class="main__info info">
                     <div class="info__body">
-                        <div class="info__hidden-left"></div>
-                        <div class="info__content">
-                            <div class="info__paragraph paragraph">
-                                <div class="paragraph__body">
-                                    <div class="paragraph__header"><span>Education</span></div>
-                                    <ul class="paragraph__text">
-                                        <li>Pushkin Language Gimnasium:<br> <span>2009 - 2015</span></li>
-                                        <li>Physics and Maths liceum:<br> <span>2015 - 2020</span></li>
-                                        <li>ITMO University:<br> <span>2020 - Now</span></li>
-                                    </ul>
+                        <div class="info__column"></div>
+                        <div class="info__column main-column">
+                            <div class="info__content">
+                                <div class="info__paragraph paragraph">
+                                    <div class="paragraph__body">
+                                        <div class="paragraph__header"><span>Education</span></div>
+                                        <ul class="paragraph__text">
+                                            <li>Pushkin Language Gimnasium:<br> <span>2009 - 2015</span></li>
+                                            <li>Physics and Maths liceum:<br> <span>2015 - 2020</span></li>
+                                            <li>ITMO University:<br> <span>2020 - Now</span></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="divider-line"></div>
-                            <div class="info__paragraph paragraph">
-                                <div class="paragraph__body">
-                                    <div class="paragraph__header"><span>Achievements</span></div>
-                                    <ul class="paragraph__text">
-                                        <li>290 point on USE (Russian Language + Maths + Computer Science + Personal
-                                            achievements)</li>
-                                        <li>III-tier diploma Phys-Tech Maths Olympics</li>
-                                        <li>4.0 average grade point for 4 semesters</li>
-                                    </ul>
+                                <div class="divider-line"></div>
+                                <div class="info__paragraph paragraph">
+                                    <div class="paragraph__body">
+                                        <div class="paragraph__header"><span>Achievements</span></div>
+                                        <ul class="paragraph__text">
+                                            <li>290 point on USE (Russian Language + Maths + Computer Science + Personal
+                                                achievements)</li>
+                                            <li>III-tier diploma Phys-Tech Maths Olympics</li>
+                                            <li>4.0 average grade point for 4 semesters</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="divider-line"></div>
-                            <div class="info__paragraph paragraph">
-                                <div class="paragraph__body">
-                                    <div class="paragraph__header"><span>Skills and Tools</span></div>
-                                    <ul class="paragraph__text">
-                                        <li>Python 3</li>
-                                        <li>PyTest</li>
-                                        <li>AIOgram + TelegramAPI</li>
-                                        <li>PostgreSQL</li>
-                                        <li>Git + Github</li>
-                                        <li>Pycharm</li>
-                                    </ul>
+                                <div class="divider-line"></div>
+                                <div class="info__paragraph paragraph">
+                                    <div class="paragraph__body">
+                                        <div class="paragraph__header"><span>Skills and Tools</span></div>
+                                        <ul class="paragraph__text">
+                                            <li>Python 3</li>
+                                            <li>PyTest</li>
+                                            <li>AIOgram + TelegramAPI</li>
+                                            <li>PostgreSQL</li>
+                                            <li>Git + Github</li>
+                                            <li>Pycharm</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <img class="info__image" src="assets/cv/mystudy.jpg" alt="It's me!">
+                        <div class="info__column">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img class="swiper-image" src="assets/cv/mystudy.jpg" alt="my-study">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="swiper-image" src="assets/cv/myanime.jpg" alt="my-anime">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="swiper-image" src="assets/cv/mychill.jpg" alt="my-chill">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,13 +127,13 @@
                     </div>
                 </div>
                 <div class="footer-block">
-                    <img src="assets/icons/vk.png" class="footer-block__icon" alt="It's me!">
+                    <img src="assets/icons/vk.png" class="footer-block__icon" alt="VK">
                     <div class="footer-block__link">
                         <a href="https://vk.com/wilfordaf">VK</a>
                     </div>
                 </div>
                 <div class="footer-block">
-                    <img src="assets/icons/tg.png" class="footer-block__icon" alt="It's me!">
+                    <img src="assets/icons/tg.png" class="footer-block__icon" alt="TG">
                     <div class="footer-block__link">
                         <a href="https://t.me/wilfordaf">TG</a>
                     </div>
@@ -122,6 +142,11 @@
         </footer>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.js"></script>
+<script src="./scripts/headroom.js"></script>
 <script src="./scripts/highlightMenuItem.js"></script>
+<script src="./scripts/swiper.js"></script>
+
 
 </html>
